@@ -1,0 +1,9 @@
+.tabTitle{
+    width: 100%;
+    background-color:var(--blue-dark) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: var(--white);
+}

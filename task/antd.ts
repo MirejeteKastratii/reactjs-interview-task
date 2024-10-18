@@ -2,6 +2,9 @@ import { ConfigProviderProps } from "antd";
 
 const antdStyles: ConfigProviderProps["theme"] = {
   components: {
-    Button: {},
+    Button: {
+      //   textTextActiveColor: "orange",
+      //   paddingBlockSM: "0px",
+    },
   },
 };

@@ -1,0 +1,13 @@
+.save {
+  background-color: var(--green);
+  color: white;
+}
+
+.delete {
+  background-color: var(--red);
+  color: white;
+}
+.buttonLabel{
+width: 300px;
+  border-right: 1px solid blue;
+}

@@ -12,8 +12,9 @@ type ActionType = "create" | "save" | "delete" | "cancel";
 
 interface P {
   actionType: ActionType;
-  onClick?: () => void;
+  isBig?: boolean;
   buttonName?: string;
+  onClick?: () => void;
 }
 
 const iconMap: Record<P["actionType"], JSX.Element> = {
@@ -30,16 +31,21 @@ const classMap: Record<P["actionType"], string> = {
   create: styles.save,
 };
 
-export const Button = ({ actionType, onClick, buttonName }: P) => {
+export const Button = ({ actionType, onClick, buttonName, isBig }: P) => {
   return (
     <AntdBtn
-      className={classNames(classMap[actionType], styles.button)}
+      className={classNames(classMap[actionType], styles.button, {
+        [styles.big]: isBig,
+      })}
       onClick={onClick}
     >
       {buttonName && <span className={styles.buttonLabel}>{buttonName}</span>}
       <span
         className={classNames(styles.icon, {
-          [styles.hasBorder]: buttonName,
+          [styles.greenBorder]:
+            buttonName && (actionType === "create" || actionType === "save"),
+          [styles.redBorder]:
+            buttonName && (actionType === "cancel" || actionType === "delete"),
         })}
       >
         {iconMap[actionType]}

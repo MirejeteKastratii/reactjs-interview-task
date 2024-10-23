@@ -1,16 +1,22 @@
-.noteWrapper{
-    /* width: 100%; */
-width: 400px;
-background-color: var(--white);
-border-bottom: 1px solid blue;
-padding: 10px;
+.noteWrapper {
+    width: 100%;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    padding: 10px;
+    cursor: pointer;
 }
-.noteTitle{
+
+.noteTitle {
     font-size: 16px;
     margin-bottom: 5px;
 }
-.noteText{
+
+.noteText {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+}
+
+.selected {
+    background-color: var(--selected-note-background);
 }

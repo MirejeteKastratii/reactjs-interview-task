@@ -1,20 +1,22 @@
 .newCategory {
-    width: fit-content; /**todo:change this value**/
+    width: 100%;
     background-color: var(--white);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     border-radius: var(--border-radius);
-gap: 5px;
+    gap: 5px;
 }
 
 .input {
-    width: 70%;
+    background-color: var(--white-dark);
+    border: none;
+    height: 100%;
 }
 
 .buttons {
-    width: 30%;
+    width: fit-content;
     display: flex;
+    justify-content: space-between;
     gap: 5px;
 }

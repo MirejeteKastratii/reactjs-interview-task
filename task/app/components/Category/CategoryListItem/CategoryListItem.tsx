@@ -6,29 +6,27 @@ import {
 } from "@ant-design/icons";
 import styles from "./categorylistitem.module.css";
 import classNames from "classnames";
+import { Category } from "@/Context";
 
 interface P {
-  notesCount: number;
+  isOpen: boolean;
+  category: Category;
+  onCategorySelect: (id: number) => void;
 }
 
-export const CategoryListItem = ({ notesCount }: P) => {
-  const [open, setOpen] = useState(false);
-
-  const toggleOpen = () => {
-    setOpen((prev) => !prev);
-  };
+export const CategoryListItem = ({ isOpen, category, onCategorySelect }: P) => {
   return (
     <div
       className={classNames(styles.categoryWrapper, {
-        [styles.open]: open,
+        [styles.open]: isOpen,
       })}
-      onClick={toggleOpen}
+      onClick={() => onCategorySelect(category.id)}
     >
       <span className={styles.label}>
         <FolderFilled />
-        Category ({notesCount})
+        {category.name} ({category.notes.length})
       </span>
-      {open ? <CaretRightFilled /> : <CaretDownFilled />}
+      {isOpen ? <CaretRightFilled /> : <CaretDownFilled />}
     </div>
   );
 };

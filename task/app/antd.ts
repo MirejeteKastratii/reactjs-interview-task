@@ -2,24 +2,29 @@ import { ConfigProviderProps } from "antd";
 
 export const antdStyles: ConfigProviderProps["theme"] = {
   token: {
-    // colorPrimary: "orange",
-    // colorBgBase: "pink",
-    // colorTextBase: "red",
-    // colorTextSecondary: semanticColors.fontS,
-    // colorPrimaryBgHover: semanticColors.primaryGray,
+    borderRadius: 0,
+    margin: 0,
+    marginLG: 0,
   },
   components: {
     Button: {
-      defaultHoverBg: "black", // overwrite me css
       paddingInline: "0px",
       defaultBorderColor: "transparent",
       defaultHoverBorderColor: "transparent",
       defaultActiveBorderColor: "transparent",
-      defaultActiveColor: "orange",
-      defaultColor: "white",
+      // defaultColor: "white",
       defaultHoverColor: "white",
-      defaultActiveBg: "blue", // overwrite me css
+      defaultActiveColor: "white",
       paddingBlock: "0px",
+      borderRadius: 5,
+    },
+    Input: {
+      borderRadius: 5,
+    },
+    Divider: {
+      textPaddingInline: 0,
+      verticalMarginInline: 0,
+      orientationMargin: 0,
     },
   },
 };

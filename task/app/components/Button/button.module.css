@@ -1,26 +1,62 @@
-.button{
+.button {
   overflow: hidden;
-  border: none !important;
 }
+
+.big {
+  width: 100%;
+}
+
+.big>.buttonLabel {
+  width: 90%;
+}
+
 .save {
   background-color: var(--green);
   color: white;
 }
 
+.save:active {
+  background-color: var(--green-darker-button);
+}
+
+.save:hover {
+  background-color: var(--green-hover-button) !important;
+}
+
+.save:hover .greenBorder {
+  border-left: 1px solid var(--green);
+}
+
 .delete {
-  background-color: var(--red);
+  background-color: var(--red-hover-button);
   color: white;
 }
 
+.delete:active {
+  background-color: var(--red-darker-button);
+}
+
+.delete:hover {
+  background-color: var(--red) !important;
+}
+
+.delete:hover .redBorder {
+  border-left: 1px solid var(--red-hover-button);
+}
+
 .buttonLabel {
-  width: 300px;
+  width: 120px;
 }
 
 .icon {
   padding: 10px;
 
 }
-.hasBorder{
-  border-left: 1px solid blue;
 
+.greenBorder {
+  border-left: 1px solid var(--green-hover-button);
+}
+
+.redBorder {
+  border-left: 1px solid var(--red);
 }

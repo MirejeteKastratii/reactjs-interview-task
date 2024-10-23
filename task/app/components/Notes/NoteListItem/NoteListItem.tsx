@@ -1,15 +1,23 @@
+import { type Note } from "@/Context";
 import styles from "./notelistitem.module.css";
+import classNames from "classnames";
 
 interface P {
-  noteTitle: string;
-  noteText: string;
+  note: Note;
+  isSelected: boolean;
+  onNoteSelect: (id: number) => void;
 }
 
-export const NoteListItem = ({ noteTitle, noteText }: P) => {
+export const NoteListItem = ({ note, isSelected, onNoteSelect }: P) => {
   return (
-    <div className={styles.noteWrapper}>
-      <h1 className={styles.noteTitle}>{noteTitle}</h1>
-      <p className={styles.noteText}>{noteText}</p>
+    <div
+      className={classNames(styles.noteWrapper, {
+        [styles.selected]: isSelected,
+      })}
+      onClick={() => onNoteSelect(note.id)}
+    >
+      <h1 className={styles.noteTitle}>{note.title}</h1>
+      <p className={styles.noteText}>{note.description}</p>
     </div>
   );
 };

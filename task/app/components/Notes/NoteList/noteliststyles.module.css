@@ -1,4 +1,4 @@
-.categoriesMenu {
+.noteListWrapper {
     background-color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
@@ -7,21 +7,27 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-
+    flex: 1;
 }
 
-.categories {
+.notes {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 10px;
     overflow-y: scroll;
     max-height: 100%;
     height: 100%;
-    padding-right: 10px;
+
 }
 
-.newCategoryButtons {
+.noteListButtons {
+    display: grid;
+    grid-template-columns: 35% 65%;
+    gap: 10px;
+    padding-right: 10px;
+    width: 33%;
+}
+
+.noteListButtonsFull {
     width: 100%;
-    margin-bottom: 10px;
 }

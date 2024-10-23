@@ -1,7 +1,6 @@
 .categoryWrapper {
     background-color: var(--blue);
-    /* width: 100%; */
-    width: 200px;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -10,15 +9,18 @@
     border-radius: var(--border-radius);
     cursor: pointer;
 }
-.label{
+
+.label {
     display: flex;
     align-items: center;
     gap: 5px;
 }
-.label > :first-child {
-font-size: 25px;
+
+.label> :first-child {
+    font-size: 25px;
 }
-.open{
+
+.open {
     background-color: var(--gray);
     color: var(--text-color);
 }

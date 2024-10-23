@@ -1,13 +1,27 @@
-import { Form, Input } from "antd";
-import { Button } from "../../Button";
-const { TextArea } = Input;
+import { Divider, Form, Input } from "antd";
+import { Button, Empty } from "@/components";
 import styles from "./noteform.module.css";
-import { Empty } from "../../Empty/Empty";
-type FormType = "create" | "edit";
+import { useEffect, useState } from "react";
+import { type Note } from "@/Context";
+
+const { TextArea } = Input;
 interface P {
-  formType: FormType;
+  note: Note;
+  isEdit: boolean;
+  submitNote: (note: Note) => void;
+  deleteNote: (noteId: number) => void;
 }
-export const NoteForm = () => {
+export const NoteForm = ({ note, isEdit, submitNote, deleteNote }: P) => {
+  const [editedNote, setEditedNote] = useState<Note>({
+    id: 0,
+    title: "",
+    description: "",
+  });
+
+  useEffect(() => {
+    setEditedNote(note);
+  }, [note]);
+
   return (
     <div className={styles.formWrapper}>
       <div className={styles.formHeaderWrapper}>
@@ -23,12 +37,42 @@ export const NoteForm = () => {
         </span>
       </div>
       <Form className={styles.form}>
-        <Input placeholder="Add a title" />
-        <TextArea placeholder="Write your note here..." />
+        <Input
+          placeholder="Add a title"
+          variant="borderless"
+          value={editedNote?.title}
+          onChange={(e) =>
+            setEditedNote((prev) => ({ ...prev, title: e.target.value }))
+          }
+        />
+
+        <Divider />
+        <TextArea
+          value={editedNote?.description}
+          className={styles.textarea}
+          placeholder="Write your note here..."
+          variant="borderless"
+          onChange={(e) =>
+            setEditedNote((prev) => ({
+              ...prev,
+              description: e.target.value,
+            }))
+          }
+        />
       </Form>
       <div className={styles.formButtons}>
-        <Button actionType="delete" buttonName="Delete Note" />
-        <Button actionType="save" buttonName="Save Changes" />
+        <Button
+          actionType="save"
+          buttonName="Save Changes"
+          onClick={() => submitNote(editedNote)}
+        />
+        {isEdit && (
+          <Button
+            actionType="delete"
+            buttonName="Delete Note"
+            onClick={() => deleteNote(note.id)}
+          />
+        )}
       </div>
     </div>
   );

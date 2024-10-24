@@ -58,7 +58,7 @@ export const Content = () => {
             onNoteSelect={(id) => {
               setSelected((prev) => ({
                 ...prev,
-                noteId: prev.noteId === id ? 0 : id, // deselect on double tap
+                noteId: prev.noteId === id ? 0 : id,
               }));
             }}
             onCreateNote={handleCreateNote}

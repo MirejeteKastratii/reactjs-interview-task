@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import { CategoryMenu } from "./CategoryMenu";
 import { useNotes } from "@/Context";
-import "@testing-library/jest-dom"; // For matchers like toBeInTheDocument
+import "@testing-library/jest-dom";
 
 jest.mock("@/Context", () => ({
   useNotes: jest.fn(),

@@ -12,7 +12,6 @@ export const antdStyles: ConfigProviderProps["theme"] = {
       defaultBorderColor: "transparent",
       defaultHoverBorderColor: "transparent",
       defaultActiveBorderColor: "transparent",
-      // defaultColor: "white",
       defaultHoverColor: "white",
       defaultActiveColor: "white",
       paddingBlock: "0px",

@@ -44,6 +44,7 @@ export const NoteForm = ({ note, isEdit, submitNote, deleteNote }: P) => {
           onChange={(e) =>
             setEditedNote((prev) => ({ ...prev, title: e.target.value }))
           }
+          data-testid="note_title"
         />
 
         <Divider />
@@ -58,6 +59,7 @@ export const NoteForm = ({ note, isEdit, submitNote, deleteNote }: P) => {
               description: e.target.value,
             }))
           }
+          data-testid="note_description"
         />
       </Form>
       <div className={styles.formButtons}>

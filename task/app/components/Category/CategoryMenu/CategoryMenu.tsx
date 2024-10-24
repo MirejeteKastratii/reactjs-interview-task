@@ -39,6 +39,7 @@ export const CategoryMenu = ({ selectedCategory, onCategorySelect }: P) => {
       <div className={styles.categories}>
         {categories.map((el) => (
           <CategoryListItem
+            key={el.id}
             isOpen={selectedCategory === el.id}
             category={el}
             onCategorySelect={(id: number) => {

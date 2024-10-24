@@ -34,7 +34,7 @@ export const NoteList = ({
           buttonName="Create Note"
           onClick={onCreateNote}
         />
-        <Search setSearch={setSearch} />
+        <Search setSearch={setSearch} data-testid="search_input" />
       </div>
       <div className={styles.notes}>
         {filteredNotes.map((el) => (

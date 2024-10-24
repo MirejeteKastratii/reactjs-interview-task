@@ -11,9 +11,7 @@ export default {
   },
   testEnvironment: "jsdom",
   transform: {
-    "^.+\\.(ts|tsx)$": "ts-jest", // Transform TypeScript files
+    "^.+\\.(ts|tsx)$": "ts-jest",
   },
-  transformIgnorePatterns: [
-    "/node_modules/(?!blah)", // Add specific modules if needed
-  ],
+  transformIgnorePatterns: ["/node_modules/(?!blah)"],
 };

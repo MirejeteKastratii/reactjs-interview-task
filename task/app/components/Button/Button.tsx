@@ -18,10 +18,10 @@ interface P {
 }
 
 const iconMap: Record<P["actionType"], JSX.Element> = {
-  save: <CheckOutlined />,
-  delete: <DeleteFilled />,
-  create: <PlusOutlined />,
-  cancel: <CloseOutlined />,
+  save: <CheckOutlined data-testid="Check" />,
+  delete: <DeleteFilled data-testid="Delete" />,
+  create: <PlusOutlined data-testid="Plus" />,
+  cancel: <CloseOutlined data-testid="Close" />,
 };
 
 const classMap: Record<P["actionType"], string> = {

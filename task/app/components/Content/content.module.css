@@ -32,5 +32,10 @@
     box-shadow: var(--shadow);
     display: flex;
     align-items: center;
+    flex-direction: column;
+    gap: 4%;
     justify-content: center;
+}
+.emptyNote > * {
+    font-size: 25px;
 }

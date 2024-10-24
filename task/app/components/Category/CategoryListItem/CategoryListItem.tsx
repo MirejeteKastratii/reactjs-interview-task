@@ -26,7 +26,11 @@ export const CategoryListItem = ({ isOpen, category, onCategorySelect }: P) => {
         <FolderFilled />
         {category.name} ({category.notes.length})
       </span>
-      {isOpen ? <CaretRightFilled /> : <CaretDownFilled />}
+      {isOpen ? (
+        <CaretRightFilled data-testid="CaretRightFilled" />
+      ) : (
+        <CaretDownFilled data-testid="CaretDownFilled" />
+      )}
     </div>
   );
 };

@@ -4,7 +4,7 @@ export const TabTitle = () => {
   return (
     <div className={styles.tabTitle}>
       <p>Your Notes</p>
-      <CloseOutlined />
+      <CloseOutlined data-testid="close-button" />
     </div>
   );
 };

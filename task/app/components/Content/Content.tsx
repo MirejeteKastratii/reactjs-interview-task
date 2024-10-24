@@ -66,7 +66,9 @@ export const Content = () => {
           />
         )}
         {!selected.categoryId && (
-          <div className={styles.emptyNote}>select a category</div>
+          <div className={styles.emptyNote}>
+            <p>Select a category to get started, or create a new one!</p>
+          </div>
         )}
         {(createNote || note) && (
           <NoteForm

@@ -39,6 +39,7 @@ export const NoteList = ({
       <div className={styles.notes}>
         {filteredNotes.map((el) => (
           <NoteListItem
+            key={el.id}
             note={el}
             onNoteSelect={onNoteSelect}
             isSelected={el.id === selectedNoteId}

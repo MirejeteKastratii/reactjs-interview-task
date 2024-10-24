@@ -1,11 +1,19 @@
-import type { Config } from "jest";
-
-const config: Config = {
+import { pathsToModuleNameMapper } from "ts-jest";
+import { compilerOptions } from "./tsconfig.json";
+export default {
   preset: "ts-jest",
-  testEnvironment: "jest-environment-jsdom",
+  // setupFilesAfterEnv: ["<rootDir>/testSetup.ts"],
   moduleNameMapper: {
-    "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    "\\.(css|less)$": "jest-css-modules",
+    ...pathsToModuleNameMapper(compilerOptions.paths || {}, {
+      prefix: "<rootDir>/",
+    }),
   },
+  testEnvironment: "jsdom",
+  transform: {
+    "^.+\\.(ts|tsx)$": "ts-jest", // Transform TypeScript files
+  },
+  transformIgnorePatterns: [
+    "/node_modules/(?!blah)", // Add specific modules if needed
+  ],
 };
-
-export default config;

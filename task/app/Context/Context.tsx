@@ -43,7 +43,6 @@ const defaultCategories = [
       { id: 8, title: "Note 8", description: "Description for note 8" },
       { id: 9, title: "Note 9", description: "Description for note 9" },
       { id: 10, title: "Note 10", description: "Description for note 10" },
-      { id: 1, title: "Note 1", description: "Description for note 1" },
     ],
   },
   { id: 2, name: "Sample category 1", notes: [] },
